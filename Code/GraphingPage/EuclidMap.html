@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+  <Head>
+    <title>
+      EuclidMap - Graphing Calcultor
+    </title>
+
+    <!-- logo is streched in photo shop to give the icon a better look -->
+    <link rel="icon" href="pictures/logo.png">
+    
+  </Head>
+
+  <link rel="stylesheet" href="stylesheet.css">
+
+  <body>
+
+    <div id=FadeInBox class="FadeInBox">
+      <u><p><h3 id="FunctionTitle"></h3></p></u>
+      <p><h2 id="FunctionDescription"></h2></p>
+      <p><h2><a id="FunctionLinkTo" href="google.com" target="_blank">click Here to read more!</a></h2></p>
+      <img id="FadeInBoxImg" src="pictures/Cubic-Button-Icon.png" width="50" height="50">
+    </div>
+
+    <!-- Top bar -->
+    <header>
+      <div id=topbar>
+        <!-- Left Side -->
+        <div id="leftallign" style="padding-top: 7px;">
+          <input onclick="OpenMoreOptns();" class="MoreOptionOpn" type="image" src="pictures/3-Bar-Lines.png">
+          <!-- More Options Box -->
+          <div id="MoreOptionsPopUp">
+            <input onclick="CloseMoreOptns();" style="float: right;" type="image" src="pictures/X.png">
+          </div>
+        </div>
+        <!-- Center -->
+        <div id="textcenter">
+          <a>Euclid Map</a>
+        </div>
+        <!-- Right Side -->
+        <div>
+          <div id="rightallign">
+            <!-- Share Button -->
+            <input onclick="OpenShare();" class="ShareBtn" type="image" src="pictures/Share-Button.png">
+            <!-- Share Box -->
+            <div id="SignInPopUp">
+              <input onclick="CloseSignIn();" style="float: right;" type="image" src="pictures/X.png">
+            </div>
+          </div>
+          <div id="rightallignBtn">
+            <!-- Sign In Button -->
+            <button onclick="OpenSignIn();" id="rightallignBtn" class="SignInBtn">Sign In</button>
+            <!-- Sign In Box -->
+            <div id="SharePopUp">
+              <input onclick="CloseShare();" style="float: right;" type="image" src="pictures/X.png" class = "SharePopUpClose">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Slide In Frame -->
+    <div>
+      <div id="Sidebar" class="sidebar">
+        <button class="closebtn" onclick="CloseSideBar();"> X </button>
+        <p id="TitleText" class="center">Input Section</p>
+        <div class="center  ">
+          <button onclick="InputText();" id="AddTextBox">+</button> <button onclick="RemoveInputFeild();" id="RemoveTextBox">-</button>
+        </div>
+        <div id="InputDiv">
+          <!-- <input placeholder="f(x)..." id="TreeFunctionInput" onchange="InputText(this.value);"> <input class="ColourPicker" id="ColourPicker" type="color"> -->
+        </div>
+      </div>
+
+      <!-- Above Canvas -->
+      <div id="ButtonDiv">
+        <input class="openbtn" id="OpenSliderButton" onclick="OpenSideBar();" type="image" src="Pictures/Cubic-Button-Icon.png">
+
+        <!-- Canvas Controls -->
+          <input class="CanvasControlBtn" type="image" src="Pictures/More-Options.png" style="margin-right: -50px;">
+          <input class="CanvasControlBtn" type="image" src="Pictures/Lock-Closed.png">
+          <input class="CanvasControlBtn" type="image" src="Pictures/ZoomGlass-Minus.png" onclick="ZoomOut();">
+          <input class="CanvasControlBtn" type="image" src="Pictures/ZoomGlass-Plus.png" onclick="ZoomIn();">
+    </div>
+
+    <div class="MoveToPosSlider" id="center">
+    </div>
+
+    <!-- Canvas -->
+    <div>
+      <canvas id="DrawCanvas" width="1600" height="750"></canvas>
+    </div>
+  </body>
+
+  <script src="Global.js"></script>
+  <script src="SideBarFunc.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.2/math.js" integrity="sha512-U9fwz8ekKht5NdL1x4+Yh3DoXeSrsZ0M7ALcijykvrVKD+101nax1MVdc0wNSVh4GOwZGY7yQpz+rAnnoX7O3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="TextChaningClass.js"></script>
+  <script src="FunctionDraw.js"></script>
+  <script src="CanvasControl.js"></script>
+  <script src="InputControl.js"></script>
+
+</HTML>
